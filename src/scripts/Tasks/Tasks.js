@@ -1,3 +1,5 @@
+const eventHub = document.querySelector(".container")
+
 export const TaskHTMLConverter = (taskObject) => {
     return `
         <section class="task">
@@ -9,3 +11,14 @@ export const TaskHTMLConverter = (taskObject) => {
         </section>
     `
 }
+
+eventHub.addEventListener("click", clickevent =>{
+    if (clickevent.target.id.startsWith("task--")) {
+        const [prefix, id] = clickevent.target.id.split("--")
+
+        const CustomEvent = new CustomEvent("taskComplete", {
+            detail: document.getElementById(id).style.visibility = "hidden"
+        })
+        eventHub.dispatchEvent(CustomEvent)
+    }
+})
