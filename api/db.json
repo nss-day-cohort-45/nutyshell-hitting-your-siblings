@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "username": "William",
+      "email": "timcurtis97@yahoo.com",
+      "id": 1
+    }
+  ],
+  "articles": [],
+  "events": [],
+  "tasks": [],
+  "friends": [],
+  "messages": []
+}
