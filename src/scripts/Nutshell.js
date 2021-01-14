@@ -3,9 +3,7 @@ import {EventForm} from "./events/eventForm.js"
 
 
 const contentTarget = document.querySelector(".dashboard")
-const eventHub = document.querySelector(
-    EventList(),
-    EventForm().container)
+const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
     contentTarget.innerHTML = Nutshell()

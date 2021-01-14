@@ -18,7 +18,7 @@ const dispatchStateChangeEvent = () => {
 
 
 export const getEvents = () => {
-    return fetch('http://localhost:8088/db')
+    return fetch('http://localhost:8088/events')
         .then(response => response.json())
         .then(parsedEvents => {
             events = parsedEvents
@@ -29,7 +29,7 @@ export const getEvents = () => {
 
 export const saveEvent = event => {
     const stringifiedObj = JSON.stringify(event)
-     return fetch('http://localhost:8088/db', {
+     return fetch('http://localhost:8088/events', {
          method: "POST",
          headers: {
              "Content-Type": "application/json"
