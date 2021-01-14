@@ -11,13 +11,13 @@ const dispatchStateChangeEvent = () => {
 let articles = []
 
 export const useArticles = () => {
-    articles.slice()
+    return articles.slice()
 }
 //takes the array of articles and .slice() allows us to use that data in another module
 
 
 export const getArticles = () => { 
-    return fetch("http://localhost:8088/database/articles")
+    return fetch("http://localhost:8088/articles")
     .then(response => response.json())
     .then(parsedArticles => {
         articles = parsedArticles
@@ -27,7 +27,7 @@ export const getArticles = () => {
 
 export const saveArticles = article => {  
     let stringifyObj = JSON.stringify(article)
-    return fetch('http://localhost:8088/database/articles', {
+    return fetch('http://localhost:8088/articles', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export const saveArticles = article => {
 //takes the input from the form, turns it into json format then stringifies to save into database
 
 export const deleteArticle = articleId => {
-    return fetch(`http://localhost:8088/database/articles/${articleId}`, {
+    return fetch(`http://localhost:8088/articles/${articleId}`, {
         method: "DELETE"
     })
     .then(getArticles)

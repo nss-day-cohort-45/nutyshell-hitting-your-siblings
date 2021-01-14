@@ -1,7 +1,7 @@
 import { saveArticles }  from "./newsProvider.js"
 import { getArticles } from "./newsProvider.js"
 
-const contentTarget = document.querySelector("#newsContainer")
+const contentTarget = document.querySelector(".newsForm")
 const eventHub = document.querySelector(".dashboard")
 
 const render = () => {
@@ -24,7 +24,7 @@ export const newsForm = () => {
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveArticle") {
-        const text = document.querySelector("#text").nodeValue
+        const text = document.querySelector("#text").value
         const link = document.querySelector("#link").value
         const newArticle = {
             text: text,
