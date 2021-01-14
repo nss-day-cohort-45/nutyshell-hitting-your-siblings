@@ -6,11 +6,7 @@ const contentTarget = document.querySelector(".newsList")
 
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("showNewsClicked", () => {
-    NewsList()
-})
-
-eventHub.addEventListener("newsStateChanged", () => {
+eventHub.addEventListener("articleStateChanged", () => {
     NewsList()
 })
 
@@ -23,7 +19,7 @@ const render = (newsArray) => {
 
     contentTarget.innerHTML = allArticlesConvertedToStrings
 }
-// takes the array of articles objects from the databas and pushes each through the HTML converter
+// takes the array of articles objects from the database and pushes each through the HTML converter
 //then joins them as one string
 
 

@@ -16,7 +16,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteArticle--")) {
-        const [foo, newsObjectId] = clickEvent.target.id.split("--")
+        const [foo, articleId] = clickEvent.target.id.split("--")
 
         deleteArticle(articleId)
     }
