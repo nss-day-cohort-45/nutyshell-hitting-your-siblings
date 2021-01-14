@@ -1,16 +1,12 @@
 import { NewsHTMLConverter } from "./news.js";
-import { useArticles, getArticles } from "../news/newsrProvider.js";
+import { useArticles, getArticles } from "./newsProvider.js";
 
 
 const contentTarget = document.querySelector(".newsList")
 
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("showNewsClicked", () => {
-    NewsList()
-})
-
-eventHub.addEventListener("newsStateChanged", () => {
+eventHub.addEventListener("articleStateChanged", () => {
     NewsList()
 })
 
@@ -21,9 +17,9 @@ const render = (newsArray) => {
         return NewsHTMLConverter(news)
     }).join("")
 
-    contentTarget.innerHTML = allNewsConvertedToStrings
+    contentTarget.innerHTML = allArticlesConvertedToStrings
 }
-// takes the array of articles objects from the databas and pushes each through the HTML converter
+// takes the array of articles objects from the database and pushes each through the HTML converter
 //then joins them as one string
 
 
