@@ -1,4 +1,7 @@
-import {getEvents, useEvents} from "./eventProvider.js"
+import {getEvents, useEvents, deleteEvent} from "./eventProvider.js"
+import {EventHTMLConverter} from "./event.js"
+
+
 
 const contentTarget = document.querySelector(".Events")
 const eventHub = document.querySelector(".container")
@@ -11,10 +14,10 @@ eventHub.addEventListener("eventStateChanged", () => {
 
 
 eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("deleteNote--")) {
+    if (clickEvent.target.id.startsWith("deleteEvent--")) {
         const [prefix, eventId] = clickEvent.target.id.split("--")
         
-       deleteNote(eventId)
+        deleteEvent(eventId)
     }
     }
     )
