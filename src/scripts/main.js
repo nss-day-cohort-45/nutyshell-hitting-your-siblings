@@ -28,5 +28,3 @@ import { taskForm } from "./Tasks/TaskForm.js"
 
 LoginForm()
 RegisterForm()
-TaskList();
-taskForm();

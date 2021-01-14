@@ -9,8 +9,8 @@ eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveTask") {
 
       // Need to gather the data from the form
-      const name = document.querySelector("#task__title").value
-      const date = document.querySelector("#due__date").value
+      const name = document.querySelector("#title").value
+      const date = document.querySelector("#text").value
      
 
 
@@ -18,7 +18,8 @@ eventHub.addEventListener("click", clickEvent => {
       const newTask = {
         taskTitle: name,
         dueDate: date,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        isComplete: false
       }
       // Change API state and application state
       saveTask(newTask)
@@ -30,7 +31,7 @@ const render = () => {
 
     contentTarget.innerHTML = `
       <section class="taskForm">
-        <input type="text" id="" placeholder="Task Name">
+        <input type="text" id="title" placeholder="Task Name">
         <textarea id="text" placeholder="Completion Date"></textarea>
         <button id="saveTask">Save Task</button>
       </section>

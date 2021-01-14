@@ -1,5 +1,5 @@
 import { getTasks, useTasks, deleteTask } from "./TaskProvider.js";
-import { TaskHTMLConverter } from "./Task.js";
+import { TaskHTMLConverter } from "./Tasks.js";
 
 
 const contentTarget = document.querySelector(".taskList")
@@ -36,6 +36,7 @@ export const TaskList = () => {
     getTasks()
         .then(() => {
             const allTasks = useTasks()
-            render(allTasks)
+            const uncompleteTasks = allTasks.filter((tasks) => tasks.isComplete === false)
+            render(uncompleteTasks)
         })
 }

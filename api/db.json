@@ -13,7 +13,15 @@
   ],
   "articles": [],
   "events": [],
-  "tasks": [],
+  "tasks": [
+    {
+      "taskTitle": "this works",
+      "dueDate": "01/14/2021",
+      "timestamp": 1610643166013,
+      "isComplete": true,
+      "id": 1
+    }
+  ],
   "friends": [],
   "messages": []
 }

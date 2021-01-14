@@ -1,13 +1,15 @@
+import { updateTasks, useTasks } from "./TaskProvider.js"
+
 const eventHub = document.querySelector(".container")
 
 export const TaskHTMLConverter = (taskObject) => {
     return `
         <section class="task">
-            <div class="task__title">${taskObject.title}</div>
-            <div class="task__due">${taskObject.dueDate}</div>
-            <input type="checkbox" id="taskComplete" name="task" value="complete">
+            <div id="title" class="taskTitle">${taskObject.taskTitle}</div>
+            <div id="date" class="dueDate">${taskObject.dueDate}</div>
+            <input type="checkbox" id="task--${taskObject.id}" name="task" value="complete">
                 <label for="task"> This task is complete.</label>
-            <buitton id="deleteTask--${taskObject.id}">DELETE<//div>
+            <button id="deleteTask--${taskObject.id}">DELETE<//div>
         </section>
     `
 }
@@ -16,9 +18,18 @@ eventHub.addEventListener("click", clickevent =>{
     if (clickevent.target.id.startsWith("task--")) {
         const [prefix, id] = clickevent.target.id.split("--")
 
-        const CustomEvent = new CustomEvent("taskComplete", {
-            detail: document.getElementById(id).style.visibility = "hidden"
-        })
-        eventHub.dispatchEvent(CustomEvent)
+       const arrayOfTasks = useTasks()
+       const foundTasks = arrayOfTasks.find(
+           (task) => {
+               return task.id === parseInt(id)
+           }
+        )
+        foundTasks.isComplete = true 
+        updateTasks(foundTasks)  
     }
 })
+
+
+
+
+
