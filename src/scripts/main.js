@@ -34,11 +34,11 @@ if (!sessionStorage.getItem('activeUser')) {
   Nutshell();
 }
 
-EventForm()
-EventList()
-LoginForm()
-RegisterForm()
-NewsList()
-newsForm()
-MessageList()
-MessageForm()
+// EventForm()
+// EventList()
+// LoginForm()
+// RegisterForm()
+// NewsList()
+// newsForm()
+// MessageList()
+// MessageForm()
