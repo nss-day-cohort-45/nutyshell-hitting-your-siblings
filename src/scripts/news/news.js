@@ -3,7 +3,7 @@ import { deleteArticle } from "./newsProvider.js"
 export const NewsHTMLConverter = (newsObject) => {
     return ` 
     <section class="news">
-        <a href="${newsObject.link} class="news_link">${newsObject.link}</a>
+        <a href="${newsObject.link} id="link" class="news_link">${newsObject.link}</a>
         <div class="news_text">${ newsObject.text}</div> 
         <div class="news_timestamp">Timestamp: ${ new Date(newsObject.timestamp).toLocaleDateString('en-US') }</div>
         <button id="deleteArticle--${newsObject.id}">Delete</button>

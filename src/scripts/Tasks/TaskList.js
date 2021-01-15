@@ -37,6 +37,11 @@ export const TaskList = () => {
         .then(() => {
             const allTasks = useTasks()
             const uncompleteTasks = allTasks.filter((tasks) => tasks.isComplete === false)
-            render(uncompleteTasks)
+            const activeUserId = parseInt(sessionStorage.getItem('activeUser'))
+            if(uncompleteTasks === activeUserId ) {
+
+                render(uncompleteTasks)
+            }
+            
         })
 }
