@@ -8,7 +8,8 @@ import { EventList } from './events/eventList.js'
 import { EventForm } from "./events/eventForm.js"
 import { TaskList } from "./Tasks/TaskList.js"
 import { taskForm } from "./Tasks/TaskForm.js"
-
+import { MessageForm } from "./messages/messageForm.js"
+import { MessageList } from "./messages/messageList.js"
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -24,3 +25,5 @@ LoginForm()
 RegisterForm()
 NewsList()
 newsForm()
+MessageList()
+MessageForm()
