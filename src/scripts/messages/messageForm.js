@@ -13,11 +13,12 @@ eventHub.addEventListener("click", clickEvent => {
 
         const text = document.querySelector("#text").value
 
-
+        activeUser = parseInt(sessionStorage.getItem('activeUser'));
 
         const newMessage = {
             messageText: text,
-            timestamp: Date.now()
+            timestamp: Date.now(),
+            activeUser: activeUser
         }
 
         saveMessage(newMessage)
