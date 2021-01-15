@@ -13,8 +13,8 @@ export const NewsHTMLConverter = (newsObject) => {
 
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("click", clickevent => {
-    if (clickevent.target.id.startsWithis("deleteArticle--")) {
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteArticle--")) {
         const [foo, newsObjectId] = clickEvent.target.id.split("--")
 
         deleteArticle(articleId)
