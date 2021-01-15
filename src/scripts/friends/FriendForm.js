@@ -21,6 +21,7 @@ eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "friend__addButton") {
         const newFriend = document.querySelector("#friend__searchBar").value
         friendCheck(newFriend)
+
     }
 })
 
@@ -28,10 +29,10 @@ const friendCheck = (name) => {
     const userId = parseInt(sessionStorage.getItem("activeUser"))
     const users = useUsers()
     const userFriendId = users.find(friend => friend.username === name)
-
     if (userFriendId) {
         const newFriend = {
-            userId,
+            userId: userId,
+            friendName: userFriendId.username,
             userFriendId: userFriendId.id
         }
 

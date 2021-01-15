@@ -8,7 +8,7 @@ import { renderSearchBar } from "./FriendForm.js"
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".friendContainer")
 
-eventHub.addEventListener("friendStateChanged", () => FriendList())
+eventHub.addEventListener("friendsStateChanged", () => FriendList())
 
 // empty arrays for users and friends
 let users = []
@@ -33,7 +33,7 @@ const render = () => {
     const userFriendships = friends.filter(friend => friend.userId === parseInt(sessionStorage.getItem("activeUser")))
 
     userFriendships.forEach(rel => {
-        const matchedUser = users.find(user => user.id === rel.username)
+        const matchedUser = users.find(user => user.id === rel.userFriendId)
         friendHTML += FriendHTMLConverter(matchedUser, rel)
     })
 
