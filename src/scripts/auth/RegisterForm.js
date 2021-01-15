@@ -33,7 +33,7 @@ eventHub.addEventListener("click", e => {
 
                             eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                         })
-
+                        
                 }
                 else {
                     window.alert("Username already exists!  😭")

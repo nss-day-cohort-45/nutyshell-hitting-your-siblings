@@ -18,6 +18,7 @@ eventHub.addEventListener("click", e => {
                     eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                 }
             })
+           
     }
 })
 
