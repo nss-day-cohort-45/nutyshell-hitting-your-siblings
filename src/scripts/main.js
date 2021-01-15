@@ -2,14 +2,10 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 import "./Nutshell.js"
-
+import { newsForm } from "./news/newsForm.js"
+import { NewsList } from "./news/newsList.js"
 import { EventList } from './events/eventList.js'
 import { EventForm } from "./events/eventForm.js"
-
-
-
-
-
 import { TaskList } from "./Tasks/TaskList.js"
 import { taskForm } from "./Tasks/TaskForm.js"
 
@@ -26,3 +22,5 @@ EventForm()
 EventList()
 LoginForm()
 RegisterForm()
+NewsList()
+newsForm()
