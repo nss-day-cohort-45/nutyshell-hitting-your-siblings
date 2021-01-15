@@ -1,5 +1,9 @@
-import { EventList } from "./events/eventList.js"
-import {EventForm} from "./events/eventForm.js"
+import { newsForm } from "./news/newsForm.js"
+import { NewsList } from "./news/newsList.js"
+import { EventList } from './events/eventList.js'
+import { EventForm } from "./events/eventForm.js"
+import { TaskList } from "./Tasks/TaskList.js"
+import { taskForm } from "./Tasks/TaskForm.js"
 
 
 const contentTarget = document.querySelector(".dashboard")
@@ -13,5 +17,11 @@ eventHub.addEventListener("userAuthenticated", e => {
 
 export const Nutshell = () => {
     // Render all your UI components here
-    
+    EventForm()
+    EventList()
+    NewsList()
+    newsForm()
+    TaskList()
+    taskForm()
+
 }
