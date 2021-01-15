@@ -16,17 +16,17 @@ eventHub.addEventListener("messageStateChanged", () => {
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteMessage--")) {
         const [prefix, messageId] = clickEvent.target.id.split("--")
-        
+
         deleteMessage(messageId)
     }
-    }
-    )
+}
+)
 
 
 const render = (MessagesArray) => {
     const allMessagesConvertedToStrings = MessagesArray.map(
         (message) => {
-         return   MessageHTMLConverter(message)  
+            return MessageHTMLConverter(message)
         }
     ).join("")
 
