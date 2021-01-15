@@ -3,10 +3,10 @@
 //after it finds it it will render that to the dom. we need a friends list to render the frinds list in.
 //when you type in another users name it should save it
 
-import { useUsers } from "../users/UserDataProvider.js"
+import { useUsers } from "../users/usersProvider.js"
 import { saveFriend } from "../friends/FriendDataProvider.js"
 
-const contentTarget = document.querySelector(".friend")
+const contentTarget = document.querySelector(".friends")
 const eventHub = document.querySelector(".container")
 
 export const renderSearchBar = () => {

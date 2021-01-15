@@ -1,12 +1,12 @@
 
 import { FriendHTMLConverter } from "./Friend.js"
-import { useUsers, getUsers } from "../users/UserDataProvider.js"
+import { useUsers, getUsers } from "../users/usersProvider.js"
 import { useFriends, getFriends } from "./FriendDataProvider.js"
-import { renderSearchBar } from "./Friend.js"
+import { renderSearchBar } from "./FriendForm.js"
 
 
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".friends")
+const contentTarget = document.querySelector(".friendContainer")
 
 eventHub.addEventListener("friendStateChanged", () => FriendList())
 
@@ -33,14 +33,14 @@ const render = () => {
     const userFriendships = friends.filter(friend => friend.userId === parseInt(sessionStorage.getItem("activeUser")))
 
     userFriendships.forEach(rel => {
-        const matchedUser = users.find(user => user.id === rel.userFriendId)
+        const matchedUser = users.find(user => user.id === rel.username)
         friendHTML += FriendHTMLConverter(matchedUser, rel)
     })
 
-    contentElement.innerHTML = `
+    contentTarget.innerHTML = `
         <h3>Friends</h3>
         <button id="addFriend">Add Friend</button>
-        ${friendHTMLRep}
+        ${friendHTML}
     `
 }
 

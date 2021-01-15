@@ -8,20 +8,20 @@ const dispatchStateChangeEvent = () => {
 
 let friends = []
 
-const useFriends = () => {
+export const useFriends = () => {
     return friends.slice()
 }
 
 export const getFriends = () => {
     fetch('http://localhost:8088/friends')
         .then(response => response.json())
-        .then(parsedFriends = {
-            friends = parsedriends
+        .then(parsedFriends => {
+            friends = parsedFriends
         })
 }
 //gets users friends from the database and pushes them into the friends array
 
-const saveFriend = friend => {
+export const saveFriend = friend => {
     let stringifyObj = JSON.stringify(friend)
     return fetch('http://localhost:8088/friends', {
         method: "POST",
@@ -35,7 +35,7 @@ const saveFriend = friend => {
 }
 // translates friend info into json for the api
 
-const deleteFriend = friendId => {
+export const deleteFriend = friendId => {
     fetch(`http://localhost:8088/friends/${friendId}`, {
         method: "DELETE"
     })
