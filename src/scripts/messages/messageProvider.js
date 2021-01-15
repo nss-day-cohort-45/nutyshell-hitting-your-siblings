@@ -4,9 +4,15 @@ let messages = []
 
 
 
-export const useMessages = () => {
-    return messages.slice()
-}
+
+    export const useMessages = () => {
+        const sortedByDate = messages.sort(
+            (currentMessage, nextMessage) =>
+            Date.parse(currentMessage.date) - Date.parse(nextMessage.date)
+        )
+        return sortedByDate
+    }
+
 
 
 
@@ -18,7 +24,7 @@ const dispatchStateChangeEvent = () => {
 
 
 export const getMessages = () => {
-    return fetch('http://localhost:8088/messages')
+    return fetch("http://localhost:8088/messages?_expand=user")
         .then(response => response.json())
         .then(parsedMessages => {
             messages = parsedMessages
