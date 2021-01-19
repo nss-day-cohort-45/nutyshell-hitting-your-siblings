@@ -2,7 +2,7 @@ import { saveArticles }  from "./newsProvider.js"
 import { getArticles } from "./newsProvider.js"
 
 const contentTarget = document.querySelector(".newsForm")
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".container")
 
 const render = () => {
 

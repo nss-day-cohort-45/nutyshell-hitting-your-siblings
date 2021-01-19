@@ -1,6 +1,6 @@
-import { getMessages, useMessages, deleteMessage } from "./messageProvider.js"
-import { MessageHTMLConverter } from "./message.js"
-import { getUsers, useUsers } from "../users/usersProvider.js"
+import {getMessages, useMessages, deleteMessage} from "./messageProvider.js"
+import {MessageHTMLConverter} from "./message.js"
+import {getUsers, useUsers} from "../users/usersProvider.js"
 
 
 const contentTarget = document.querySelector(".Messages")
