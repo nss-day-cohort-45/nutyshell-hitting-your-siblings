@@ -28,7 +28,7 @@ eventHub.addEventListener("click", clickEvent => {
 const render = () => {
     
     contentTarget.innerHTML = `
-    <textarea id="text" placeholder="Event Details"></textarea>
+    <textarea id="text" placeholder="Enter Message"></textarea>
     <button id="saveEvent">Post Message</button>`
     
 }
