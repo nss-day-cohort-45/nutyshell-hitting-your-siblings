@@ -1,5 +1,7 @@
-import {getMessages, useMessages, deleteMessage} from "./messageProvider.js"
-import {MessageHTMLConverter} from "./message.js"
+
+import { getMessages, useMessages, deleteMessage } from "./messageProvider.js"
+import { MessageHTMLConverter } from "./message.js"
+import { getUsers, useUsers } from "../users/usersProvider.js"
 
 
 
@@ -16,16 +18,20 @@ eventHub.addEventListener("messageStateChanged", () => {
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteMessage--")) {
         const [prefix, messageId] = clickEvent.target.id.split("--")
-        
+
         deleteMessage(messageId)
     }
-    }
-    )
+}
+)
 
 
 const render = (MessagesArray, allUsers) => {
     const allMessagesConvertedToStrings = MessagesArray.map(
-    (message) => {
+        (message) => {
+            return MessageHTMLConverter(message)
+        }
+    ).join("")
+
 
         
      return   MessageHTMLConverter(message)  
