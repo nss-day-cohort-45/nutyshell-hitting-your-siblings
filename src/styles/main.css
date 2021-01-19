@@ -1,0 +1,89 @@
+.container { 
+    display: flex; 
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.auth--login { 
+    display: grid;
+    margin-bottom: 5px;
+    
+}
+.auth--register { 
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.dashboard {
+    display:flex;
+    flex-flow: column wrap;
+    max-width: 50px;
+
+}
+
+.newsContainer {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.newsList {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.newsForm {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.friends {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.friendContainer {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 5px;
+    max-width: 100px;
+}
+
+.eventFormContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.Events {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.messsageFormContainer {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.Messages {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+.taskFormContainer {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
+
+.taskList {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 20px;
+}
