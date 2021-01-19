@@ -12,6 +12,8 @@ import { getMessages } from "./messages/messageProvider.js"
 import { NewsHTMLConverter } from "./news/news.js";
 import { EventHTMLConverter } from "./events/event.js";
 import { TaskHTMLConverter } from "./Tasks/Tasks.js";
+import { useFriends }  from "./friends/friendDataProvider.js";
+import { FriendList }  from "./friends/FriendList.js";
 
 
 
@@ -30,7 +32,7 @@ useUsers(),
 useTasks(),
 useArticles(),
 useEvents(),
-
+useFriends()
 ]
 
 export const Nutshell = () => {
@@ -47,6 +49,7 @@ const render = () => {
   EventForm()
   taskForm()
   newsForm()
+  FriendList()
     
 }   
 

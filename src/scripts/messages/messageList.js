@@ -35,10 +35,7 @@ const render = (MessagesArray, allUsers) => {
 
 
         
-     return   MessageHTMLConverter(message)  
-    }
-).join("")
-
+     
 contentTarget.innerHTML = allMessagesConvertedToStrings
 }
 
