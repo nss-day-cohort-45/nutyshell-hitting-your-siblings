@@ -1,6 +1,9 @@
+
 import {getMessages, useMessages, deleteMessage} from "./messageProvider.js"
 import {MessageHTMLConverter} from "./message.js"
 import {getUsers, useUsers} from "../users/usersProvider.js"
+
+
 
 
 const contentTarget = document.querySelector(".Messages")
@@ -23,15 +26,22 @@ eventHub.addEventListener("click", clickEvent => {
 )
 
 
-const render = (MessagesArray) => {
+const render = (MessagesArray, allUsers) => {
     const allMessagesConvertedToStrings = MessagesArray.map(
         (message) => {
             return MessageHTMLConverter(message)
         }
     ).join("")
 
-    contentTarget.innerHTML = allMessagesConvertedToStrings
+
+        
+     return   MessageHTMLConverter(message)  
+    }
+).join("")
+
+contentTarget.innerHTML = allMessagesConvertedToStrings
 }
+
 
 
 
@@ -39,8 +49,12 @@ const render = (MessagesArray) => {
 
 export const MessageList = () => {
     getMessages()
-        .then(() => {
-            const allMessages = useMessages()
+    .then(() => {
+        const allMessages = useMessages()
             render(allMessages)
         })
 }
+
+
+
+

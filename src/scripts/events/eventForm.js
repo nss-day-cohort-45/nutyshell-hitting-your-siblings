@@ -1,5 +1,5 @@
 import { saveEvent } from "./eventProvider.js"
-import { useEvents, getEvents } from "./eventProvider.js"
+
 
 const contentTarget = document.querySelector(".eventFormContainer")
 const eventHub = document.querySelector(".container")
@@ -32,7 +32,7 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 const render = () => {
-    const eventsCollection = useEvents()
+    
     
     contentTarget.innerHTML = `
     <input type="text" id="eventName" placeholder="Event name">

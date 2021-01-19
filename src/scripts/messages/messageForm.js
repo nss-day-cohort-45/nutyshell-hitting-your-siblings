@@ -11,14 +11,14 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveMessage") {
 
 
-        const text = document.querySelector("#text").value
+        const MessageText = document.querySelector("#messageText").value
 
-        activeUser = parseInt(sessionStorage.getItem('activeUser'));
+        const activeUser = parseInt(sessionStorage.getItem('activeUser'));
 
         const newMessage = {
-            messageText: text,
+            MessageText: MessageText,
             timestamp: Date.now(),
-            activeUser: activeUser
+            userId: activeUser
         }
 
         saveMessage(newMessage)
@@ -28,8 +28,8 @@ eventHub.addEventListener("click", clickEvent => {
 const render = () => {
     
     contentTarget.innerHTML = `
-    <textarea id="text" placeholder="Enter Message"></textarea>
-    <button id="saveEvent">Post Message</button>`
+    <textarea id="messageText" placeholder="New Message"></textarea>
+    <button id="saveMessage">Post Message</button>`
     
 }
 
