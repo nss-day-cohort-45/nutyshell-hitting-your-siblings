@@ -1,4 +1,4 @@
-const contentTarget = document.querySelector(".auth--register")
+const contentTarget = document.querySelector(".auth")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
@@ -33,7 +33,7 @@ eventHub.addEventListener("click", e => {
 
                             eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                         })
-
+                        
                 }
                 else {
                     window.alert("Username already exists!  😭")

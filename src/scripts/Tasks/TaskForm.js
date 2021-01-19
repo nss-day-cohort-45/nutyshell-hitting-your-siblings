@@ -11,11 +11,12 @@ eventHub.addEventListener("click", clickEvent => {
       // Need to gather the data from the form
       const name = document.querySelector("#title").value
       const date = document.querySelector("#text").value
-     
+      const userId = parseInt(sessionStorage.getItem('activeUser'))
 
 
       // Make a new object representation of a task
       const newTask = {
+        userID: userId,
         taskTitle: name,
         dueDate: date,
         timestamp: Date.now(),
